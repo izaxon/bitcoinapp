@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' *; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; media-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
@@ -14,6 +15,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/angular/angular-resource.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -23,17 +25,19 @@
     <script src="js/controllers.js"></script>
   </head>
   <body ng-app="starter" ng-controller="MainCtrl">
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
+    <ion-view>
+      <ion-header-bar class="bar-positive">
         <h1 class="title">Bitcoin</h1>
       </ion-header-bar>
       <ion-content class="has-header padding">
-          <h2>Price USD: {{data.priceUSD}}</h2>
-          <p>Blocks: {{data.blocks}}</p>
+          <h4><u>1 BTC</u></h4>
+          <h3>${{data.priceUSD}}</h3>
+          <h3>€{{data.priceEUR}}</h3>
+          <!--<p>Blocks: {{data.blocks}}</p>-->
       </ion-content>
         <!--<ion-footer-bar class="bar-stable">
             <p>&copy; 2016 - Izaxon</p>
         </ion-footer-bar>    -->
-    </ion-pane>
+    </ion-view>
   </body>
 </html>
